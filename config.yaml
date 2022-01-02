@@ -42,7 +42,7 @@ params:
   hidemeta: false
   hideSummary: false
   showtoc: true
-  tocopen: true
+  tocopen: false
 
   assets:
     # disableHLJS: true # to disable highlight.js
@@ -55,7 +55,7 @@ params:
 
   label:
     text: "Wenke"
-    icon: 
+    icon:
     iconHeight: 35
 
   # profile-mode
@@ -100,8 +100,8 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/wenkechen/content"
-    Text: "Github" # edit text
+    URL: "https://github.com/wenkechen/wenkechen.github.io/blob/master/content"
+    Text: "Original" # edit text
     appendFilePath: true # to append file path to Edit link
 
   # for search
