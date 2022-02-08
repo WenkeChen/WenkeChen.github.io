@@ -86,9 +86,9 @@ params:
     - name: github
       url: "https://github.com/wenkechen"
 
-  # analytics:
-  #   google:
-  #     SiteVerificationTag: "XYZabc"
+   analytics:
+     google:
+       SiteVerificationTag: "5qPbseAOG3zr_auAjX6vFWkZZaOjD409lzGZUNlgKjo"
   #   bing:
   #     SiteVerificationTag: "XYZabc"
   #   yandex:
