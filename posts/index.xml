@@ -10,7 +10,22 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jan 2022 20:26:26 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Feb 2022 15:50:59 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于CSRF与表单重复提交</title>
+      <link>https://wenkechen.github.io/posts/%E5%85%B3%E4%BA%8Ecsrf%E4%B8%8E%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Wed, 09 Feb 2022 15:50:59 +0800</pubDate>
+      
+      <guid>https://wenkechen.github.io/posts/%E5%85%B3%E4%BA%8Ecsrf%E4%B8%8E%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/</guid>
+      <description>跨站请求伪造（英语：Cross-site request forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF， 是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。
+ 问题 抵御跨站请求伪造和表单重复提交最有效的手段都是在表单中加一个token，那么CSRF的token能用于防御表单重复提交吗？
+求证 扒了一下symfony关于CSRF token的生成源码。
+通过tokenId获取token
+public function getCsrfToken(string $tokenId): string { return $this-&amp;gt;csrfTokenManager-&amp;gt;getToken($tokenId)-&amp;gt;getValue(); } 如果存储中存在对应的token就直接拿，否则创建
+public function getToken($tokenId) { $namespacedId = $this-&amp;gt;getNamespace().$tokenId; if ($this-&amp;gt;storage-&amp;gt;hasToken($namespacedId)) { $value = $this-&amp;gt;storage-&amp;gt;getToken($namespacedId); } else { $value = $this-&amp;gt;generator-&amp;gt;generateToken(); $this-&amp;gt;storage-&amp;gt;setToken($namespacedId, $value); } return new CsrfToken($tokenId, $value); } 真正的生成的方法
+class UriSafeTokenGenerator implements TokenGeneratorInterface { private $entropy; /** * Generates URI-safe CSRF tokens.</description>
+    </item>
+    
     <item>
       <title>Jetbrains开源许可证申请花絮</title>
       <link>https://wenkechen.github.io/posts/jetbrains%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E7%94%B3%E8%AF%B7%E8%8A%B1%E7%B5%AE/</link>
@@ -29,7 +44,7 @@
       
       <guid>https://wenkechen.github.io/posts/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
       <description>2021年都过的太快了，快到很多东西我都记不太清它到底是发生在2021还是2020。
-生活 说实话单身老男人的生活没什么可说的，记录下来也只是浪费笔墨而已。这一年明明工作顺利，也没遇到什么挫折，但是年初的时候还是非常焦虑，后来干脆直接把头埋在沙子里，不听不看那些贩卖焦虑的东西，这些情绪才得以缓解。
+生活 说实话单身老男人的生活没什么可说的，记录下来也只是浪费笔墨罢了。这一年明明工作顺利，也没遇到什么挫折，但是年初的时候还是非常焦虑，后来干脆直接把头埋在沙子里，不听不看那些贩卖焦虑的东西，这些情绪才得以缓解。
 年中的时候在表哥的“教唆”下，独立一人写了一个平台。好好体验了一把827（早上8点，凌晨2点，一周7天）的生活，现在想想觉得还挺有意思的。也正是因为用力过猛，导致现在根本不想运营这个平台了，不过可能方向是对的，在我有一搭没一搭地维护下，基本算是回本了。
 工作 要说我的生活无趣，那工作可谓是有过之而无不及了。除了刚入职的那几个月，学习了新的框架以及项目规范，之后便是无止境的重复了，最可怕的是这种重复要一直继续下去。。。
 感情 None. 很努力地想要脱单，未果。参加过一次群体相亲，带给我地只有“爱情真的存在吗”的疑问，不会再去了。希望明年能遇到自己的缘分。

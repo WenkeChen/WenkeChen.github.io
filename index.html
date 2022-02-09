@@ -32,8 +32,8 @@
 <meta name=twitter:description content="Wenke Chen's personal blog">
 <script type=application/ld+json>{"@context":"https://schema.org","@type":"Organization","name":"wenkechen","url":"https://wenkechen.github.io","description":"Wenke Chen\u0026#39;s personal blog","thumbnailUrl":"https://wenkechen.github.io/%3Clink%20/%20abs%20url%3E","sameAs":["https://github.com/wenkechen"]}</script>
 </head>
-<body class="list dark" id=top>
-<script>localStorage.getItem("pref-theme")==="light"&&document.body.classList.remove('dark')</script>
+<body class=list id=top>
+<script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add('dark')</script>
 <header class=header>
 <nav class=nav>
 <div class=logo>
@@ -79,6 +79,23 @@
 </article>
 <article class=post-entry>
 <header class=entry-header>
+<h2>关于CSRF与表单重复提交
+</h2>
+</header>
+<section class=entry-content>
+<p>跨站请求伪造（英语：Cross-site request forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF， 是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。
+问题 抵御跨站请求伪造和表单重复提交最有效的手段都是在表单中加一个token，那么CSRF的token能用于防御表单重复提交吗？
+求证 扒了一下symfony关于CSRF token的生成源码。
+通过tokenId获取token
+public function getCsrfToken(string $tokenId): string { return $this->csrfTokenManager->getToken($tokenId)->getValue(); } 如果存储中存在对应的token就直接拿，否则创建
+public function getToken($tokenId) { $namespacedId = $this->getNamespace().$tokenId; if ($this->storage->hasToken($namespacedId)) { $value = $this->storage->getToken($namespacedId); } else { $value = $this->generator->generateToken(); $this->storage->setToken($namespacedId, $value); } return new CsrfToken($tokenId, $value); } 真正的生成的方法
+class UriSafeTokenGenerator implements TokenGeneratorInterface { private $entropy; /** * Generates URI-safe CSRF tokens....</p>
+</section>
+<footer class=entry-footer><span title="2022-02-09 15:50:59 +0800 +0800">February 9, 2022</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;WenkeChen</footer>
+<a class=entry-link aria-label="post link to 关于CSRF与表单重复提交" href=https://wenkechen.github.io/posts/%E5%85%B3%E4%BA%8Ecsrf%E4%B8%8E%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/></a>
+</article>
+<article class=post-entry>
+<header class=entry-header>
 <h2>Jetbrains开源许可证申请花絮
 </h2>
 </header>
@@ -97,7 +114,7 @@
 </header>
 <section class=entry-content>
 <p>2021年都过的太快了，快到很多东西我都记不太清它到底是发生在2021还是2020。
-生活 说实话单身老男人的生活没什么可说的，记录下来也只是浪费笔墨而已。这一年明明工作顺利，也没遇到什么挫折，但是年初的时候还是非常焦虑，后来干脆直接把头埋在沙子里，不听不看那些贩卖焦虑的东西，这些情绪才得以缓解。
+生活 说实话单身老男人的生活没什么可说的，记录下来也只是浪费笔墨罢了。这一年明明工作顺利，也没遇到什么挫折，但是年初的时候还是非常焦虑，后来干脆直接把头埋在沙子里，不听不看那些贩卖焦虑的东西，这些情绪才得以缓解。
 年中的时候在表哥的“教唆”下，独立一人写了一个平台。好好体验了一把827（早上8点，凌晨2点，一周7天）的生活，现在想想觉得还挺有意思的。也正是因为用力过猛，导致现在根本不想运营这个平台了，不过可能方向是对的，在我有一搭没一搭地维护下，基本算是回本了。
 工作 要说我的生活无趣，那工作可谓是有过之而无不及了。除了刚入职的那几个月，学习了新的框架以及项目规范，之后便是无止境的重复了，最可怕的是这种重复要一直继续下去。。。
 感情 None. 很努力地想要脱单，未果。参加过一次群体相亲，带给我地只有“爱情真的存在吗”的疑问，不会再去了。希望明年能遇到自己的缘分。
