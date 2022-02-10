@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>经验分享 on wenkechen</title>
+    <link>https://wenkechen.github.io/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</link>
+    <description>Recent content in 经验分享 on wenkechen</description>
+    <image>
+      <url>https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Jan 2022 20:26:26 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/tags/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Jetbrains开源许可证申请花絮</title>
+      <link>https://wenkechen.github.io/posts/jetbrains%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E7%94%B3%E8%AF%B7%E8%8A%B1%E7%B5%AE/</link>
+      <pubDate>Sun, 02 Jan 2022 20:26:26 +0800</pubDate>
+      
+      <guid>https://wenkechen.github.io/posts/jetbrains%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E7%94%B3%E8%AF%B7%E8%8A%B1%E7%B5%AE/</guid>
+      <description>网上关于Jetbrains开源许可证的教程非常多，这里就不赘述了，没啥价值。
+前几天IDEA的试用到期，不想找那些破解工具了，刚好想起一个因兴趣写的一个开源项目，于是尝试着用那个项目申请Jetbrains的开源许可证。
+由于我本人的问题，这个开源项目虽然开发事件跨度有一年多，但是申请前3个月没有过提交记录，所以没有通过Jetbrains的检测程序，于是收到了不通过的邮件： 抱着试一试的心态，我给她们发了申诉邮件： 可能Jetbrains的初衷也是为了防止申请泛滥，所以给我这种情况开了绿灯（外国企业虽然回复慢但是质量都非常高！） Jetbrains虽然收费贵，但我仍然觉得他是一家伟大的公司~</description>
+    </item>
+    
+  </channel>
+</rss>
