@@ -2,6 +2,8 @@
 title: "Jetbrains开源许可证申请花絮"
 date: 2022-01-02T20:26:26+08:00
 draft: false
+categories: ["其他"]
+tags: ["IDEA", "经验分享"]
 ---
 
 网上关于Jetbrains开源许可证的教程非常多，这里就不赘述了，没啥价值。
