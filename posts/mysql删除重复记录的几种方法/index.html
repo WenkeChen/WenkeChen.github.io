@@ -28,7 +28,9 @@ DELETE `a` FROM `students` AS `a`, `students` AS `b` WHERE -- IMPORTANT: Ensures
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style>
 </noscript>
-<script type=application/javascript>var doNotTrack=!1;doNotTrack||(function(a,e,f,g,b,c,d){a.GoogleAnalyticsObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,d.parentNode.insertBefore(c,d)}(window,document,'script','https://www.google-analytics.com/analytics.js','ga'),ga('create','UA-123-45','auto'),ga('send','pageview'))</script><meta property="og:title" content="MySQL删除重复记录的几种方法">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLVK1276CF"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-ZLVK1276CF',{anonymize_ip:!1})}</script>
+<meta property="og:title" content="MySQL删除重复记录的几种方法">
 <meta property="og:description" content="问题 这里有这么一张学生信息表，表结构如下：
 CREATE TABLE `students` ( `id` int UNSIGNED NOT NULL AUTO_INCREMENT, `name` varchar(30) NOT NULL, `gender` tinyint(1) UNSIGNED NOT NULL, `age` int UNSIGNED NOT NULL, PRIMARY KEY (`id`) ); 现name,gender,age三个字段均相同，则可认定这是同一个学生；但是由于表没有加联合唯一索引，所以表里面有很多重复的记录，怎么样使相同的记录只保留一条？
 解答 若是查询，我们大可用group by然后having count或者distinct来合并查询一条，但是删除好似没有这样方便的语句。所以总结了一些比较好的方法：
