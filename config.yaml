@@ -47,7 +47,7 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
+    favicon: 'https://ae01.alicdn.com/kf/H316b426e16a44015b29c0a8faf8e6ba3P.png'
     favicon16x16: "<link / abs url>"
     favicon32x32: "<link / abs url>"
     apple_touch_icon: "<link / abs url>"
@@ -83,6 +83,8 @@ params:
       # url: "https://twitter.com/"
     # - name: stackoverflow
       # url: "https://stackoverflow.com"
+    - name: news
+      url: 'https://wenkechen.github.io/news/'
     - name: github
       url: "https://github.com/wenkechen"
 
@@ -101,7 +103,7 @@ params:
 
   editPost:
     URL: "https://github.com/wenkechen/wenkechen.github.io/blob/master/content"
-    Text: "Original" # edit text
+    Text: "Edit" # edit text
     appendFilePath: true # to append file path to Edit link
 
   # for search
