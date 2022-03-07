@@ -3,10 +3,10 @@
 <meta http-equiv=x-ua-compatible content="IE=edge">
 <meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <meta name=robots content="index, follow">
-<title>Series | wenkechen</title><meta name=keywords content>
+<title>排序 | wenkechen</title><meta name=keywords content>
 <meta name=description content="Wenke Chen's personal blog">
 <meta name=author content="WenkeChen">
-<link rel=canonical href=https://wenkechen.github.io/series/>
+<link rel=canonical href=https://wenkechen.github.io/tags/%E6%8E%92%E5%BA%8F/>
 <meta name=google-site-verification content="5qPbseAOG3zr_auAjX6vFWkZZaOjD409lzGZUNlgKjo">
 <link crossorigin=anonymous href=/assets/css/stylesheet.min.c88963fe2d79462000fd0fb1b3737783c32855d340583e4523343f8735c787f0.css integrity="sha256-yIlj/i15RiAA/Q+xs3N3g8MoVdNAWD5FIzQ/hzXHh/A=" rel="preload stylesheet" as=style>
 <link rel=icon href=https://ae01.alicdn.com/kf/H316b426e16a44015b29c0a8faf8e6ba3P.png>
@@ -17,17 +17,17 @@
 <meta name=theme-color content="#2e2e33">
 <meta name=msapplication-TileColor content="#2e2e33">
 <meta name=generator content="Hugo 0.93.2">
-<link rel=alternate type=application/rss+xml href=https://wenkechen.github.io/series/index.xml>
+<link rel=alternate type=application/rss+xml href=https://wenkechen.github.io/tags/%E6%8E%92%E5%BA%8F/index.xml>
 <noscript>
 <style>#theme-toggle,.top-link{display:none}</style></noscript><script async src="https://www.googletagmanager.com/gtag/js?id=G-ZLVK1276CF"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-ZLVK1276CF",{anonymize_ip:!1})}</script>
-<meta property="og:title" content="Series">
+<meta property="og:title" content="排序">
 <meta property="og:description" content="Wenke Chen's personal blog">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://wenkechen.github.io/series/"><meta property="og:image" content="https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="WenkeChen">
+<meta property="og:url" content="https://wenkechen.github.io/tags/%E6%8E%92%E5%BA%8F/"><meta property="og:image" content="https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E"><meta property="og:site_name" content="WenkeChen">
 <meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E">
-<meta name=twitter:title content="Series">
+<meta name=twitter:title content="排序">
 <meta name=twitter:description content="Wenke Chen's personal blog">
 </head><body class=list id=top>
 <script>localStorage.getItem("pref-theme")==="dark"&&document.body.classList.add("dark")</script>
@@ -53,9 +53,14 @@
 <span>tags</span>
 </a>
 </li></ul></nav></header><main class=main>
-<header class=page-header>
-<h1>Series</h1></header><ul class=terms-tags>
-</ul></main><footer class=footer>
+<header class=page-header><div class=breadcrumbs><a href=https://wenkechen.github.io>Home</a>&nbsp;»&nbsp;<a href=https://wenkechen.github.io/tags/>Tags</a></div><h1>排序</h1></header><article class="post-entry tag-entry">
+<header class=entry-header>
+<h2>Golang排序
+</h2></header><section class=entry-content>
+<p>问题 golang的排序函数非常强大，对于数组切片，可以很方便地进行排序，那么他是怎么实现的呢？如果对于一个struct切片，要想根据其中一个field从大到小的顺序进行排列可以实现吗？怎么实现？
+探索 首先进入包内看一下方法实现：
+// 实现了Interface接口的类型可以被此包中的routines排序 // 这些方法通过整数索引引用基础集合的元素 type Interface interface { // Len 集合中的元素个数 Len() int // Less 反映了索引i处元素是否必须排列在索引j处元素之前 // // 如果Less(i, j)和Less(j, i)均返回false // 那么索引i处元素和索引j处元素视为相等 // Sort 可能在最终的结果中以任意顺序排列相等的元素（不稳定） // 稳定 即保留了相同元素的原始输入顺序 // // Less必须描述一个传递排序： // - 如果Less(i, j)和Less(j, k)均返回true，那么Less(i, k)也必须返回true。 // - 如果Less(i, j)和Less(j, k)军返回false，那么Less(i, k)也必须返回false。 // // 注意浮点型比较（float32或float64类型的值上的&lt;运算符） // 当涉及非数字not-a-number (NaN) 值时，它不是传递排序 // 对于浮点型值的正确实现参见 Float64Slice....</p></section><footer class=entry-footer><span title="2022-03-07 14:12:47 +0800 +0800">March 7, 2022</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;WenkeChen</footer><a class=entry-link aria-label="post link to Golang排序" href=https://wenkechen.github.io/posts/sort.sort%E6%BA%90%E7%A0%81/></a>
+</article></main><footer class=footer>
 <span>&copy; 2022 <a href=https://wenkechen.github.io>wenkechen</a></span>
 <span>
 Powered by

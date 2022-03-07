@@ -21,9 +21,8 @@
  问题 抵御跨站请求伪造和表单重复提交最有效的手段都是在表单中加一个token，那么CSRF的token能用于防御表单重复提交吗？
 求证 扒了一下symfony关于CSRF token的生成源码。
 通过tokenId获取token
-public function getCsrfToken(string $tokenId): string { return $this-&amp;gt;csrfTokenManager-&amp;gt;getToken($tokenId)-&amp;gt;getValue(); } 如果存储中存在对应的token就直接拿，否则创建
-public function getToken($tokenId) { $namespacedId = $this-&amp;gt;getNamespace().$tokenId; if ($this-&amp;gt;storage-&amp;gt;hasToken($namespacedId)) { $value = $this-&amp;gt;storage-&amp;gt;getToken($namespacedId); } else { $value = $this-&amp;gt;generator-&amp;gt;generateToken(); $this-&amp;gt;storage-&amp;gt;setToken($namespacedId, $value); } return new CsrfToken($tokenId, $value); } 真正的生成的方法
-class UriSafeTokenGenerator implements TokenGeneratorInterface { private $entropy; /** * Generates URI-safe CSRF tokens.</description>
+public function getCsrfToken(string $tokenId): string {  return $this-&amp;gt;csrfTokenManager-&amp;gt;getToken($tokenId)-&amp;gt;getValue(); } 如果存储中存在对应的token就直接拿，否则创建
+public function getToken($tokenId) {  $namespacedId = $this-&amp;gt;getNamespace().$tokenId;  if ($this-&amp;gt;storage-&amp;gt;hasToken($namespacedId)) {  $value = $this-&amp;gt;storage-&amp;gt;getToken($namespacedId);  } else {  $value = $this-&amp;gt;generator-&amp;gt;generateToken();   $this-&amp;gt;storage-&amp;gt;setToken($namespacedId, $value);  }   return new CsrfToken($tokenId, $value); } 真正的生成的方法</description>
     </item>
     
   </channel>
