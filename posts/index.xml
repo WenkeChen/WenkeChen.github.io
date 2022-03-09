@@ -63,20 +63,6 @@ public function getToken($tokenId) {  $namespacedId = $this-&amp;gt;getNamespace
     </item>
     
     <item>
-      <title>2021年终总结</title>
-      <link>https://wenkechen.github.io/posts/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Sun, 02 Jan 2022 19:45:47 +0800</pubDate>
-      
-      <guid>https://wenkechen.github.io/posts/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</guid>
-      <description>2021年都过的太快了，快到很多东西我都记不太清它到底是发生在2021还是2020。
-生活 说实话单身老男人的生活没什么可说的，记录下来也只是浪费笔墨罢了。这一年明明工作顺利，也没遇到什么挫折，但是年初的时候还是非常焦虑，后来干脆直接把头埋在沙子里，不听不看那些贩卖焦虑的东西，这些情绪才得以缓解。
-年中的时候在表哥的“教唆”下，独立一人写了一个平台。好好体验了一把827（早上8点，凌晨2点，一周7天）的生活，现在想想觉得还挺有意思的。也正是因为用力过猛，导致现在根本不想运营这个平台了，不过可能方向是对的，在我有一搭没一搭地维护下，基本算是回本了。
-工作 要说我的生活无趣，那工作可谓是有过之而无不及了。除了刚入职的那几个月，学习了新的框架以及项目规范，之后便是无止境的重复了，最可怕的是这种重复要一直继续下去。。。
-感情 None. 很努力地想要脱单，未果。参加过一次群体相亲，带给我地只有“爱情真的存在吗”的疑问，不会再去了。希望明年能遇到自己的缘分。
-TODO  想转Golang开发，想找一个方向精进技术，写一些有深度的博客，希望未来能够出一本书 想谈个恋爱  </description>
-    </item>
-    
-    <item>
       <title>没什么可以写的就先不写吧</title>
       <link>https://wenkechen.github.io/posts/%E6%B2%A1%E4%BB%80%E4%B9%88%E5%8F%AF%E4%BB%A5%E5%86%99%E7%9A%84%E5%B0%B1%E5%85%88%E4%B8%8D%E5%86%99%E5%90%A7/</link>
       <pubDate>Sun, 19 Dec 2021 00:10:25 +0800</pubDate>
