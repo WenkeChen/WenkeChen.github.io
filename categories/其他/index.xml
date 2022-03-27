@@ -10,7 +10,18 @@
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Jan 2022 20:26:26 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Mar 2022 19:38:07 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>golang热加载及代码调试</title>
+      <link>https://wenkechen.github.io/posts/golang%E7%83%AD%E5%8A%A0%E8%BD%BD%E5%8F%8A%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95/</link>
+      <pubDate>Sun, 27 Mar 2022 19:38:07 +0800</pubDate>
+      
+      <guid>https://wenkechen.github.io/posts/golang%E7%83%AD%E5%8A%A0%E8%BD%BD%E5%8F%8A%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95/</guid>
+      <description>热加载 为什么需要热加载 在编写go程序的过程中，每次修改完代码我们都得重新编译运行它，这是一个重复且麻烦的过程。那么有没有什么方法可以免去这个步骤，使得每次我们修改完代码自动编译并运行程序呢？
+实现 这里要介绍一个用专门用于热加载golang程序的包 air
+安装 $ go install github.com/cosmtrek/air@latest 使用  进入项目目录 初始化配置文件  $ air init 修改配置文件 实例文件  # Config file for [Air](https://github.com/cosmtrek/air) in TOML format  # 工作目录 # .或者绝对路径，注意下面的路径必须是相对于根路径的 root = &amp;#34;.&amp;#34; tmp_dir = &amp;#34;tmp&amp;#34;  [build]  # 老的shell命令，也可以使用`make`  cmd = &amp;#34;go build -o ./tmp/main .&amp;#34;  # 从`cmd`产生的二进制文件.  bin = &amp;#34;tmp/main&amp;#34;  # 自定义编译二进制文件，可以在运行命令的时候设置环境变量  full_bin = &amp;#34;APP_ENV=dev APP_USER=air ./tmp/main&amp;#34;  # 监视扩展名为以下类型的文件  include_ext = [&amp;#34;go&amp;#34;, &amp;#34;tpl&amp;#34;, &amp;#34;tmpl&amp;#34;, &amp;#34;html&amp;#34;]  # 忽略以下目录下的文件修改  exclude_dir = [&amp;#34;assets&amp;#34;, &amp;#34;tmp&amp;#34;, &amp;#34;vendor&amp;#34;, &amp;#34;frontend/node_modules&amp;#34;]  # 监视这些目录下文件的修改  include_dir = []  # 忽略以下文件  exclude_file = []  # 排除符合以下正则表达式的文件  exclude_regex = [&amp;#34;_test.</description>
+    </item>
+    
     <item>
       <title>Jetbrains开源许可证申请花絮</title>
       <link>https://wenkechen.github.io/posts/jetbrains%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E7%94%B3%E8%AF%B7%E8%8A%B1%E7%B5%AE/</link>

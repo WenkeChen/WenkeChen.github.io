@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>IDEA on wenkechen</title>
-    <link>https://wenkechen.github.io/tags/idea/</link>
-    <description>Recent content in IDEA on wenkechen</description>
+    <title>debug on wenkechen</title>
+    <link>https://wenkechen.github.io/tags/debug/</link>
+    <description>Recent content in debug on wenkechen</description>
     <image>
       <url>https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
       <link>https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 27 Mar 2022 19:38:07 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/tags/idea/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Mar 2022 19:38:07 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/tags/debug/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>golang热加载及代码调试</title>
       <link>https://wenkechen.github.io/posts/golang%E7%83%AD%E5%8A%A0%E8%BD%BD%E5%8F%8A%E4%BB%A3%E7%A0%81%E8%B0%83%E8%AF%95/</link>
@@ -20,17 +20,6 @@
       <description>热加载 为什么需要热加载 在编写go程序的过程中，每次修改完代码我们都得重新编译运行它，这是一个重复且麻烦的过程。那么有没有什么方法可以免去这个步骤，使得每次我们修改完代码自动编译并运行程序呢？
 实现 这里要介绍一个用专门用于热加载golang程序的包 air
 安装 $ go install github.com/cosmtrek/air@latest 使用  进入项目目录 初始化配置文件  $ air init 修改配置文件 实例文件  # Config file for [Air](https://github.com/cosmtrek/air) in TOML format  # 工作目录 # .或者绝对路径，注意下面的路径必须是相对于根路径的 root = &amp;#34;.&amp;#34; tmp_dir = &amp;#34;tmp&amp;#34;  [build]  # 老的shell命令，也可以使用`make`  cmd = &amp;#34;go build -o ./tmp/main .&amp;#34;  # 从`cmd`产生的二进制文件.  bin = &amp;#34;tmp/main&amp;#34;  # 自定义编译二进制文件，可以在运行命令的时候设置环境变量  full_bin = &amp;#34;APP_ENV=dev APP_USER=air ./tmp/main&amp;#34;  # 监视扩展名为以下类型的文件  include_ext = [&amp;#34;go&amp;#34;, &amp;#34;tpl&amp;#34;, &amp;#34;tmpl&amp;#34;, &amp;#34;html&amp;#34;]  # 忽略以下目录下的文件修改  exclude_dir = [&amp;#34;assets&amp;#34;, &amp;#34;tmp&amp;#34;, &amp;#34;vendor&amp;#34;, &amp;#34;frontend/node_modules&amp;#34;]  # 监视这些目录下文件的修改  include_dir = []  # 忽略以下文件  exclude_file = []  # 排除符合以下正则表达式的文件  exclude_regex = [&amp;#34;_test.</description>
-    </item>
-    
-    <item>
-      <title>Jetbrains开源许可证申请花絮</title>
-      <link>https://wenkechen.github.io/posts/jetbrains%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E7%94%B3%E8%AF%B7%E8%8A%B1%E7%B5%AE/</link>
-      <pubDate>Sun, 02 Jan 2022 20:26:26 +0800</pubDate>
-      
-      <guid>https://wenkechen.github.io/posts/jetbrains%E5%BC%80%E6%BA%90%E8%AE%B8%E5%8F%AF%E8%AF%81%E7%94%B3%E8%AF%B7%E8%8A%B1%E7%B5%AE/</guid>
-      <description>网上关于Jetbrains开源许可证的教程非常多，这里就不赘述了，没啥价值。
-前几天IDEA的试用到期，不想找那些破解工具了，刚好想起一个因兴趣写的一个开源项目，于是尝试着用那个项目申请Jetbrains的开源许可证。
-由于我本人的问题，这个开源项目虽然开发事件跨度有一年多，但是申请前3个月没有过提交记录，所以没有通过Jetbrains的检测程序，于是收到了不通过的邮件： 抱着试一试的心态，我给她们发了申诉邮件： 可能Jetbrains的初衷也是为了防止申请泛滥，所以给我这种情况开了绿灯（外国企业虽然回复慢但是质量都非常高！） Jetbrains虽然收费贵，但我仍然觉得他是一家伟大的公司~</description>
     </item>
     
   </channel>
