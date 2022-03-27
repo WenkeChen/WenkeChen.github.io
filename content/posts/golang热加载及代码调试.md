@@ -2,6 +2,8 @@
 title: "golang热加载及代码调试"
 date: 2022-03-27T19:38:07+08:00
 draft: false
+categories: ["其他"]
+tags: ["IDEA", "Goland", "debug"]
 ---
 
 ## 热加载
