@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>token on wenkechen</title>
+    <link>https://wenkechen.github.io/tags/token/</link>
+    <description>Recent content in token on wenkechen</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 09 Feb 2022 15:50:59 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/tags/token/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于CSRF与表单重复提交</title>
+      <link>https://wenkechen.github.io/posts/%E5%85%B3%E4%BA%8Ecsrf%E4%B8%8E%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/</link>
+      <pubDate>Wed, 09 Feb 2022 15:50:59 +0800</pubDate>
+      
+      <guid>https://wenkechen.github.io/posts/%E5%85%B3%E4%BA%8Ecsrf%E4%B8%8E%E8%A1%A8%E5%8D%95%E9%87%8D%E5%A4%8D%E6%8F%90%E4%BA%A4/</guid>
+      <description>跨站请求伪造（英语：Cross-site request forgery），也被称为 one-click attack 或者 session riding，通常缩写为 CSRF 或者 XSRF， 是一种挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法。跟跨网站脚本（XSS）相比，XSS 利用的是用户对指定网站的信任，CSRF 利用的是网站对用户网页浏览器的信任。
+ 问题 抵御跨站请求伪造和表单重复提交最有效的手段都是在表单中加一个token，那么CSRF的token能用于防御表单重复提交吗？
+求证 扒了一下symfony关于CSRF token的生成源码。
+通过tokenId获取token
+public function getCsrfToken(string $tokenId): string { return $this-&amp;gt;csrfTokenManager-&amp;gt;getToken($tokenId)-&amp;gt;getValue(); } 如果存储中存在对应的token就直接拿，否则创建
+public function getToken($tokenId) { $namespacedId = $this-&amp;gt;getNamespace().$tokenId; if ($this-&amp;gt;storage-&amp;gt;hasToken($namespacedId)) { $value = $this-&amp;gt;storage-&amp;gt;getToken($namespacedId); } else { $value = $this-&amp;gt;generator-&amp;gt;generateToken(); $this-&amp;gt;storage-&amp;gt;setToken($namespacedId, $value); } return new CsrfToken($tokenId, $value); } 真正的生成的方法
+class UriSafeTokenGenerator implements TokenGeneratorInterface { private $entropy; /** * Generates URI-safe CSRF tokens.</description>
+    </item>
+    
+  </channel>
+</rss>

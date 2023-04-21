@@ -102,7 +102,7 @@ public function buildForm(FormBuilderInterface $builder, array $options)
 
 ## 总结
 
-在一次存储（session|redis）的生命周期内，每次加载form其CSRF token都是固定的，CSRF token不能用于防止表单重复提交。要想CSRF token用于防止表单重复提交那就得每次表单提交后删除其对应的token了；
+在一次会话的生命周期内，每次加载form其CSRF token都是固定的，CSRF token不能用于防止表单重复提交。要想CSRF token用于防止表单重复提交那就得每次表单提交后删除其对应的token了；
 
 当然以上针对的只是标准搞法，不保证所有地方都这样。
 
