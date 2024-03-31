@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>MySQL on wenkechen</title>
-    <link>https://wenkechen.github.io/tags/mysql/</link>
+    <link>https://wksama.github.io/tags/mysql/</link>
     <description>Recent content in MySQL on wenkechen</description>
     <image>
-      <url>https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://wksama.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://wksama.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Apr 2023 21:24:46 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Apr 2023 21:24:46 +0800</lastBuildDate><atom:link href="https://wksama.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQL事务隔离</title>
-      <link>https://wenkechen.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/</link>
+      <link>https://wksama.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/</link>
       <pubDate>Fri, 21 Apr 2023 21:24:46 +0800</pubDate>
       
-      <guid>https://wenkechen.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/</guid>
+      <guid>https://wksama.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/</guid>
       <description>本文联合chatGPT，采用问答形式编写
 MySQL事务隔离 MySQL事务隔离是指在多个并发事务同时操作数据库时，为了保证数据的一致性和隔离性，系统采取的一种控制机制。MySQL提供了四种事务隔离级别，分别为READ UNCOMMITTED、READ COMMITTED、REPEATABLE READ和SERIALIZABLE。
 READ UNCOMMITTED：最低级别的隔离级别，事务可以读取到其他事务未提交的数据，容易导致脏读、不可重复读和幻读等问题。
@@ -43,10 +43,10 @@ SERIALIZABLE原理，为什么可以避免幻读 SERIALIZABLE是MySQL提供的�
     
     <item>
       <title>MySQL删除重复记录的几种方法</title>
-      <link>https://wenkechen.github.io/posts/mysql%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</link>
+      <link>https://wksama.github.io/posts/mysql%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</link>
       <pubDate>Thu, 10 Feb 2022 17:47:05 +0800</pubDate>
       
-      <guid>https://wenkechen.github.io/posts/mysql%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
+      <guid>https://wksama.github.io/posts/mysql%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
       <description>问题 这里有这么一张学生信息表，表结构如下：
 CREATE TABLE `students` ( `id` int UNSIGNED NOT NULL AUTO_INCREMENT, `name` varchar(30) NOT NULL, `gender` tinyint(1) UNSIGNED NOT NULL, `age` int UNSIGNED NOT NULL, PRIMARY KEY (`id`) ); 现name,gender,age三个字段均相同，则可认定这是同一个学生；但是由于表没有加联合唯一索引，所以表里面有很多重复的记录，怎么样使相同的记录只保留一条？
 解答 若是查询，我们大可用group by然后having count或者distinct来合并查询一条，但是删除好似没有这样方便的语句。所以总结了一些比较好的方法：

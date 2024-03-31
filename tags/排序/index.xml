@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>排序 on wenkechen</title>
-    <link>https://wenkechen.github.io/tags/%E6%8E%92%E5%BA%8F/</link>
+    <link>https://wksama.github.io/tags/%E6%8E%92%E5%BA%8F/</link>
     <description>Recent content in 排序 on wenkechen</description>
     <image>
-      <url>https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://wenkechen.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://wksama.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://wksama.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 07 Mar 2022 14:12:47 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/tags/%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 07 Mar 2022 14:12:47 +0800</lastBuildDate><atom:link href="https://wksama.github.io/tags/%E6%8E%92%E5%BA%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Golang排序</title>
-      <link>https://wenkechen.github.io/posts/sort.sort%E6%BA%90%E7%A0%81/</link>
+      <link>https://wksama.github.io/posts/sort.sort%E6%BA%90%E7%A0%81/</link>
       <pubDate>Mon, 07 Mar 2022 14:12:47 +0800</pubDate>
       
-      <guid>https://wenkechen.github.io/posts/sort.sort%E6%BA%90%E7%A0%81/</guid>
+      <guid>https://wksama.github.io/posts/sort.sort%E6%BA%90%E7%A0%81/</guid>
       <description>问题 golang的排序函数非常强大，对于一些类型的切片(int,float64,string)，可以很方便地进行排序，那么它是怎么实现的呢？如果对于一个struct切片，要想根据其中一个field从大到小的顺序进行排列可以实现吗？怎么实现？
 探索 首先进入包内看一下方法实现：
 // 实现了Interface接口的类型可以被此包中的routines排序 // 这些方法通过整数索引引用基础集合的元素 type Interface interface { // Len 集合中的元素个数 Len() int // Less 反映了索引i处元素是否必须排列在索引j处元素之前 // // 如果Less(i, j)和Less(j, i)均返回false // 那么索引i处元素和索引j处元素视为相等 // Sort 可能在最终的结果中以任意顺序排列相等的元素（不稳定） // 稳定 即保留了相同元素的原始输入顺序 // // Less必须描述一个传递排序： // - 如果Less(i, j)和Less(j, k)均返回true，那么Less(i, k)也必须返回true。 // - 如果Less(i, j)和Less(j, k)军返回false，那么Less(i, k)也必须返回false。 // // 注意浮点型比较（float32或float64类型的值上的&amp;lt;运算符） // 当涉及非数字not-a-number (NaN) 值时，它不是传递排序 // 对于浮点型值的正确实现参见 Float64Slice.Less Less(i, j int) bool // Swap 交换索引i处和索引j处的值 Swap(i, j int) } // Sort 对数据排序 // 通过调用data.</description>
