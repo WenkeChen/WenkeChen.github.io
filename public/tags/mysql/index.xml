@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>MySQL on wenkechen</title>
-    <link>https://wenkechen.github.io/tags/mysql/</link>
-    <description>Recent content in MySQL on wenkechen</description>
+    <title>MySQL on wksama</title>
+    <link>https://wksama.github.io/tags/mysql/</link>
+    <description>Recent content in MySQL on wksama</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 10 Feb 2022 17:47:05 +0800</lastBuildDate><atom:link href="https://wenkechen.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Apr 2023 21:24:46 +0800</lastBuildDate>
+    <atom:link href="https://wksama.github.io/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MySQL事务隔离</title>
+      <link>https://wksama.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/</link>
+      <pubDate>Fri, 21 Apr 2023 21:24:46 +0800</pubDate>
+      <guid>https://wksama.github.io/posts/mysql%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB/</guid>
+      <description>本文联合chatGPT，采用问答形式编写&#xA;MySQL事务隔离 MySQL事务隔离是指在多个并发事务同时操作数据库时，为了保证数据的一致性和隔离性，系统采取的一种控制机制。MySQL提供了四种事务隔离级别，分别为READ UNCOMMITTED、READ COMMITTED、REPEATABLE READ和SERIALIZABLE。&#xA;READ UNCOMMITTED：最低级别的隔离级别，事务可以读取到其他事务未提交的数据，容易导致脏读、不可重复读和幻读等问题。&#xA;READ COMMITTED：保证事务可以读取到其他事务已经提交的数据，避免了脏读的问题，但是可能出现不可重复读和幻读。&#xA;REPEATABLE READ：保证在事务执行期间，多次读取同一记录的结果是一致的，避免了不可重复读的问题，但是可能出现幻读。&#xA;SERIALIZABLE：最高级别的隔离级别，通过强制事务串行执行来避免脏读、不可重复读和幻读等问题，但是并发性能较差。&#xA;在实际应用中，需要根据业务需求和数据完整性要求选择合适的事务隔离级别。例如，在对数据一致性要求较高的金融应用中，通常需要使用较高的事务隔离级别，而对于并发量较高、对数据一致性要求较低的应用，则可以使用较低的事务隔离级别以提高并发性能。&#xA;什么是不可重复读和幻读 不可重复读和幻读都是并发事务访问数据库时可能出现的问题，它们的出现与事务隔离级别有关。&#xA;不可重复读：指在同一个事务中，多次读取同一记录，但每次读取的结果不同。例如，事务A读取某一行数据，然后事务B修改了该行数据并提交，事务A再次读取该行数据时发现数据已经发生了改变。这种情况可能会导致数据不一致的问题。&#xA;幻读：指在同一个事务中，多次执行同一个查询，但每次查询的结果不同。例如，事务A执行一条查询语句得到了结果集，然后事务B插入了一些新的数据并提交，事务A再次执行同样的查询语句，结果集中却多了一些新的行，这种情况也可能导致数据不一致的问题。&#xA;不可重复读和幻读的区别在于，不可重复读是针对同一个记录的读取结果不一致，而幻读是针对结果集的行数不一致。在MySQL中，不可重复读可以通过使用REPEATABLE READ或SERIALIZABLE隔离级别来避免，而幻读则需要使用SERIALIZABLE隔离级别才能完全避免。&#xA;REPEATABLE READ如何保证在事务执行期间，多次读取同一记录的结果是一致的 REPEATABLE READ是MySQL提供的一种事务隔离级别，它可以保证在同一个事务中，多次读取同一记录的结果是一致的。具体实现方式如下：&#xA;事务在开始时，会创建一个快照（snapshot）来记录当前的数据库状态。&#xA;在事务执行期间，事务中的所有读取操作都会使用该快照来读取数据，而不是直接读取数据库中的数据。这样可以保证多次读取同一记录的结果是一致的，因为在快照创建后，其他事务对该记录的修改不会对该事务造成影响。&#xA;当事务提交或回滚时，快照也会被销毁，从而使得其他事务可以看到该事务所做的修改。&#xA;通过使用快照来读取数据，REPEATABLE READ可以避免不可重复读的问题。但是，由于在事务执行期间其他事务对数据库的修改不会对该事务造成影响，所以可能会出现幻读的问题。幻读指的是在同一个事务中多次执行相同的查询语句，但是每次返回的结果集中的行数不同。为了避免幻读问题，需要使用更高级别的事务隔离级别，如SERIALIZABLE。&#xA;REPEATABLE READ其他事务不会对该事务数据库造成影响，每次查询应该是一样的才对，为什么还会出现幻读 您说得没错，REPEATABLE READ确实可以避免不可重复读的问题，保证同一事务中多次读取同一记录的结果是一致的。但是，REPEATABLE READ并不能完全避免幻读问题。&#xA;幻读指的是在同一事务中多次执行相同的查询语句，但是每次返回的结果集中的行数不同。幻读的出现与修改操作有关，而REPEATABLE READ对于修改操作只做了部分限制，因此可能会出现幻读问题。具体来说，REPEATABLE READ只对于数据行的修改做了限制，但是对于新插入的数据和删除的数据并没有限制，因此在同一事务中多次执行相同的查询语句时，可能会出现新插入的数据或删除的数据影响查询结果的情况，从而导致幻读问题的出现。&#xA;为了避免幻读问题，需要使用更高级别的事务隔离级别，如SERIALIZABLE。SERIALIZABLE可以在事务执行期间锁定满足查询条件的所有行，从而保证多次执行相同查询语句返回的结果集中行数不变。&#xA;SERIALIZABLE原理，为什么可以避免幻读 SERIALIZABLE是MySQL提供的一种最严格的事务隔离级别，它可以避免幻读问题的出现。SERIALIZABLE的实现原理是通过使用行级锁和间隙锁来保证事务的串行执行。&#xA;在SERIALIZABLE隔离级别下，当一个事务对某些数据行进行了读取或修改时，它会对这些数据行加上行级锁，这样其他事务就无法同时读取或修改这些数据行，直到该事务释放这些锁。同时，为了避免新插入的数据或删除的数据对查询结果造成影响，SERIALIZABLE还会对符合查询条件但不存在的数据行进行间隙锁定，以防止其他事务在查询结果集中插入或删除数据。&#xA;通过行级锁和间隙锁的加锁机制，SERIALIZABLE可以保证在事务执行期间，其他事务无法同时修改或插入符合查询条件的数据，从而避免了幻读的出现。但是，由于SERIALIZABLE的加锁机制比较严格，可能会影响并发性能，因此在实际应用中需要根据业务场景选择合适的隔离级别。</description>
+    </item>
     <item>
       <title>MySQL删除重复记录的几种方法</title>
-      <link>https://wenkechen.github.io/posts/mysql%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</link>
+      <link>https://wksama.github.io/posts/mysql%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</link>
       <pubDate>Thu, 10 Feb 2022 17:47:05 +0800</pubDate>
-      
-      <guid>https://wenkechen.github.io/posts/mysql%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
-      <description>问题 这里有这么一张学生信息表，表结构如下：
-CREATE TABLE `students` ( `id` int UNSIGNED NOT NULL AUTO_INCREMENT, `name` varchar(30) NOT NULL, `gender` tinyint(1) UNSIGNED NOT NULL, `age` int UNSIGNED NOT NULL, PRIMARY KEY (`id`) ); 现name,gender,age三个字段均相同，则可认定这是同一个学生；但是由于表没有加联合唯一索引，所以表里面有很多重复的记录，怎么样使相同的记录只保留一条？
-解答 若是查询，我们大可用group by然后having count或者distinct来合并查询一条，但是删除好似没有这样方便的语句。所以总结了一些比较好的方法：
-创建联合唯一索引 这是最简单方便的一条了
-ALTER IGNORE TABLE students ADD UNIQUE INDEX idx_name_gender_age (name, gender, age); 注意这个IGNORE，由于表里面已经有重复记录了，所以直接创建会出现错误。执行之后，所有的重复记录都会被自动删除（只保留一条），而且以后也无法插入重复记录了。
-自关联 如果你没有修改数据库结构的权限，那下面这条肯定适合你
-DELETE `a` FROM `students` AS `a`, `students` AS `b` WHERE -- IMPORTANT: Ensures one version remains  -- Change &amp;#34;ID&amp;#34; to your unique column&amp;#39;s name  `a`.</description>
+      <guid>https://wksama.github.io/posts/mysql%E5%88%A0%E9%99%A4%E9%87%8D%E5%A4%8D%E8%AE%B0%E5%BD%95%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%B3%95/</guid>
+      <description>问题 这里有这么一张学生信息表，表结构如下：&#xA;CREATE TABLE `students` ( `id` int UNSIGNED NOT NULL AUTO_INCREMENT, `name` varchar(30) NOT NULL, `gender` tinyint(1) UNSIGNED NOT NULL, `age` int UNSIGNED NOT NULL, PRIMARY KEY (`id`) ); 现name,gender,age三个字段均相同，则可认定这是同一个学生；但是由于表没有加联合唯一索引，所以表里面有很多重复的记录，怎么样使相同的记录只保留一条？&#xA;解答 若是查询，我们大可用group by然后having count或者distinct来合并查询一条，但是删除好似没有这样方便的语句。所以总结了一些比较好的方法：&#xA;创建联合唯一索引 这是最简单方便的一条了&#xA;ALTER IGNORE TABLE students ADD UNIQUE INDEX idx_name_gender_age (name, gender, age); 注意这个IGNORE，由于表里面已经有重复记录了，所以直接创建会出现错误。执行之后，所有的重复记录都会被自动删除（只保留一条），而且以后也无法插入重复记录了。&#xA;自关联 如果你没有修改数据库结构的权限，那下面这条肯定适合你&#xA;DELETE `a` FROM `students` AS `a`, `students` AS `b` WHERE -- IMPORTANT: Ensures one version remains -- Change &amp;#34;ID&amp;#34; to your unique column&amp;#39;s name `a`.</description>
     </item>
-    
   </channel>
 </rss>

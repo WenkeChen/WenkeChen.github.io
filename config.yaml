@@ -1,6 +1,6 @@
-baseURL: 'https://wenkechen.github.io'
+baseURL: 'https://wksama.github.io'
 languageCode: 'en-us'
-title: 'wenkechen'
+title: 'wksama'
 theme: "PaperMod"
 
 enableRobotsTXT: true
@@ -21,10 +21,10 @@ taxonomies:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: WenkeChen
+  title: wksama
   description: "Wenke Chen's personal blog"
   keywords: [Blog, Portfolio, PaperMod]
-  author: WenkeChen
+  author: wksama
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "January 2, 2006"
@@ -84,9 +84,9 @@ params:
     # - name: stackoverflow
       # url: "https://stackoverflow.com"
     - name: news
-      url: 'https://wenkechen.github.io/news/'
+      url: 'https://wksama.github.io/news/'
     - name: github
-      url: "https://github.com/wenkechen"
+      url: "https://github.com/wksama"
 
   analytics:
     google:
@@ -102,7 +102,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/wenkechen/wenkechen.github.io/blob/master/content"
+    URL: "https://github.com/wksama/wksama.github.io/blob/master/content"
     Text: "Edit" # edit text
     appendFilePath: true # to append file path to Edit link
 
